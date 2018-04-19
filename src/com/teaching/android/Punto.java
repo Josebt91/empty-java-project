@@ -28,10 +28,8 @@ public class Punto {
     public double distancia(int x,int y){
         double valordistancia;
         return valordistancia=Math.sqrt(Math.pow(x-this.x,2)+Math.pow(y-this.y,2));
-      public Punto (int x, int y){
-        this.x=x;
-        this.y=y;
-    }  }
+
+     }
     public double distancia(Punto p){
         double valordistancia;
         return valordistancia=Math.sqrt(Math.pow(p.x-this.x,2)+Math.pow(p.y-this.y,2));
