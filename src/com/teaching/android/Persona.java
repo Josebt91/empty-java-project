@@ -17,4 +17,7 @@ public class Persona {
     public float getDinero(){
         return dinero;
     }
+    public String getNombre(){
+        return nombre;
+    }
 }

@@ -12,7 +12,7 @@ public class JavaApp {
 
       Persona a=new Persona ("Pepe",900);
       Persona b=new Persona ("Paco",500);
-
+        System.out.println(a.getNombre()+" tiene en su bolsilliko " + a.getDinero() + " y " + b.getNombre() + " tiene un capital de " + b.getDinero());
         a.pay(b,200);
         System.out.println("Pepe tiene "+ a.getDinero()+" y Paco tiene "+ b.getDinero() );
 
