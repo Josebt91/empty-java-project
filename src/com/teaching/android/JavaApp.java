@@ -10,11 +10,12 @@ public class JavaApp {
 
     public static void main(String[] args) {
 
-      Persona a=new Persona ("Pepe",900);
-      Persona b=new Persona ("Paco",500);
-        System.out.println(a.getNombre()+" tiene en su bolsilliko " + a.getDinero() + " y " + b.getNombre() + " tiene un capital de " + b.getDinero());
-        a.pay(b,200);
-        System.out.println("Pepe tiene "+ a.getDinero()+" y Paco tiene "+ b.getDinero() );
+        Punto p1 = new Punto (2,4);
+        Punto p2 = new Punto (3,5);
+        System.out.println("Coordenadas del primer "+ p1);
+        System.out.println("Coordenadas del segundo "+ p2);
+        System.out.println(p2.distancia(p1));
+        System.out.println(p2.distancia(4,7));
 
 
     }
