@@ -9,21 +9,21 @@ import java.util.Scanner;
 public class JavaApp {
 
     public static void main(String[] args) {
+    int n=3;
+    int m=n*n;
+    int k=0;
+    int[][] matriz=new int[n][n];
+    int [] matrizDatos = {3,2,1,1,2,3,2,3,1};
 
-        Punto p1 = new Punto (2,4);
-        Punto p2 = new Punto (3,5);
-        System.out.println("Coordenadas del primer "+ p1);
-        System.out.println("Coordenadas del segundo "+ p2);
-        System.out.println(p2.distancia(p1));
-        System.out.println(p2.distancia(4,7));
-        Circle c1=new Circle(3,5,6);
-        Circle c2=new Circle(p1,5);
-        System.out.println(c1.getArea());
-        System.out.println(c2.getCircumference()+" "+c2);
-        Circle c3=new Circle();
-        c3.setRadio(3);
-        c3.setCentro(p2);
-        System.out.println(c3+" "+c3.getArea()+" "+c3.getCircumference());
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                matriz[i][j] = matrizDatos [k];
+                System.out.print(matriz [i][j]);
+                ++k;
+            }
+        System.out.println();
+        }
+
 
 
     }
