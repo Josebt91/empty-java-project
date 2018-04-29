@@ -43,13 +43,17 @@ public class Concesionario {
         this.numeroTelefono = numeroTelefono;
     }
 
-    public void introducirVehiculo(Vehiculo v) {
+    public void introducirVehiculo(Vehiculo v)throws Exception {
+        int i;
+        for (i = 0; i < TAM; i++) {
 
-        for (int i = 0; i < TAM; i++) {
             if (baseDatos[i] == null) {
                 baseDatos[i] = v;
                 break;
             }
+        }
+        if((i+1)==TAM){
+            throw new Exception();
         }
     }
 
@@ -69,13 +73,19 @@ public class Concesionario {
         return cad;
     }
 
-    public void reserva(String matricula) {
+    public void reserva(String matricula) throws Exception{
 
-        for (int i = 0; i < TAM; i++) {
+        int i;
+        boolean reservada=false;
+        for (i = 0; i < TAM; i++) {
             if (matricula == baseDatos[i].getMatricula()) {
                 baseDatos[i].setReserva(true);
+                reservada=true;
                 break;
             }
+        }
+        if(!reservada){
+            throw new Exception();
         }
     }
 

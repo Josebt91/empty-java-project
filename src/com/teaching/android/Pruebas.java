@@ -21,13 +21,13 @@ public class Pruebas {
             con1.introducirVehiculo(m2);
             con1.introducirVehiculo(c1);
         }catch (Exception ex){
-            System.out.println(ex.getMessage());
+            System.out.println("Base de datos completa. \n");
         }
         try {
             con1.reserva("3345BFR");
-            con1.reserva("7374FJDJ");
+            con1.reserva("7374FDJ");
         }catch(Exception ex){
-            System.out.println(ex.getMessage());
+            System.out.println("Coche no registrado en base de datos \n");
         }
         System.out.println(con1);
         System.out.println(c1);
