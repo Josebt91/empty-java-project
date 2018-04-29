@@ -1,11 +1,15 @@
 package com.teaching.android;
 
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Concesionario {
-    public static int TAM = 5;
+
     private String nombre;
     private String direccion;
     private int numeroTelefono;
-    private Vehiculo[] baseDatos=new Vehiculo[TAM];
+    private Collection<Vehiculo> baseDatos=new LinkedList<Vehiculo>();
 
 
 
@@ -43,32 +47,22 @@ public class Concesionario {
         this.numeroTelefono = numeroTelefono;
     }
 
-    public void introducirVehiculo(Vehiculo v)throws Exception {
-        int i;
-        for (i = 0; i < TAM; i++) {
-
-            if (baseDatos[i] == null) {
-                baseDatos[i] = v;
-                break;
-            }
-        }
-        if((i+1)==TAM){
-            throw new Exception();
-        }
+    public void introducirVehiculo(Vehiculo v){
+        baseDatos.add(v);
     }
 
     @Override
     public String toString() {
+        int i=1;
         String cad;
         cad = "Concesionario\n\n" +
                 "nombre='" + nombre + "\n" +
                 "direccion='" + direccion + "\n" +
                 "numero Telefono=" + numeroTelefono + "\n\n" +
                 "base datos vehiculos" + "\n\n";
-        for (int i = 0; i < TAM; i++) {
-            if (baseDatos[i] != null) {
-                cad = cad + "Vehiculo " + (i + 1) + "\n\n" + baseDatos[i];
-            }
+        for (Vehiculo v:baseDatos) {
+                cad = cad + "Vehiculo " + i + "\n\n" + v.toString();
+                i++;
         }
         return cad;
     }
@@ -77,9 +71,9 @@ public class Concesionario {
 
         int i;
         boolean reservada=false;
-        for (i = 0; i < TAM; i++) {
-            if (matricula == baseDatos[i].getMatricula()) {
-                baseDatos[i].setReserva(true);
+        for (Vehiculo v:baseDatos) {
+            if (matricula == v.getMatricula()) {
+                v.setReserva(true);
                 reservada=true;
                 break;
             }
@@ -91,9 +85,9 @@ public class Concesionario {
 
     public void caracteristicas(String matricula) {
 
-        for (int i = 0; i < TAM; i++) {
-            if (matricula.equalsIgnoreCase(baseDatos[i].getMatricula()) ) {
-                Coche c1 = (Coche) baseDatos[i];
+        for (Vehiculo v:baseDatos) {
+            if (matricula.equalsIgnoreCase(v.getMatricula()) ) {
+                Coche c1 = (Coche) v;
                 System.out.println("Numero plazas del coche buscado por matricula = "+c1.getNumeroPlazas());
                 String extras;
                 if(c1.isExtras()) {
@@ -107,5 +101,15 @@ public class Concesionario {
         }
     }
 
+    public void mostrar(String matricula,String color){
+
+        for(Vehiculo v:baseDatos){
+            if(v.getMatricula().contains(matricula)||v.getColor().contains(color)){
+                System.out.println(v);
+            }
+        }
+    }
 }
+
+
 

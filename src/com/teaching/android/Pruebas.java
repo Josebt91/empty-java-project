@@ -13,16 +13,14 @@ public class Pruebas {
         Moto m2=new Moto("7557SSD","VIOLETA",true,2000,1000);
 
 
-        try {
             con1.introducirVehiculo(c1);
             con1.introducirVehiculo(c2);
             con1.introducirVehiculo(c3);
             con1.introducirVehiculo(m1);
             con1.introducirVehiculo(m2);
             con1.introducirVehiculo(c1);
-        }catch (Exception ex){
             System.out.println("Base de datos completa. \n");
-        }
+
         try {
             con1.reserva("3345BFR");
             con1.reserva("7374FDJ");
@@ -33,6 +31,7 @@ public class Pruebas {
         System.out.println(c1);
         System.out.println(c2);
         con1.caracteristicas("3345bfr");
+        con1.mostrar("33","A");
 
 
     }
